@@ -30,9 +30,9 @@
   <van-col span="6" class="transfer"><div class="img"><img  src="@/assets/transfer.svg" /></div></van-col>
 </van-row>
 
-      <van-cell-group >
+      <van-cell-group class="coin">
  <div class="label">币种</div>
-         <div class="value"><div class="symbol">BTC</div></div>
+         <div class="value"><div class="symbol">BTC</div></div><div class="arrow"><van-icon name="arrow" /></div>
       </van-cell-group>
 
       <div class="button">
@@ -88,6 +88,7 @@ export default {
   padding: 0px 0 0 14px;
 }
 .money-transfer .form  .value{
+  
     flex: 1;
    margin-left:10px; 
     padding-left:40px; 
@@ -98,6 +99,10 @@ export default {
 }
 .money-transfer .form .value .symbol{
   margin-left: 10px;
+}
+.money-transfer .form .arrow{
+  width: 40px;
+  float: right;
 }
 .money-transfer .form .van-dropdown-menu__item{
   justify-content: flex-start;
@@ -126,6 +131,16 @@ align-items:center;
 }
 .money-transfer .form .transfer img{
 height: 40px;
+}
+.money-transfer .form .coin{
+   height: 50px;
+    line-height: 50px;
+}
+.money-transfer .form .coin .value{
+   
+  text-align: left;
+  float: left;
+      padding-left:0px; 
 }
 .money-transfer .button {
   padding: 10px 10px 10px 10px;
