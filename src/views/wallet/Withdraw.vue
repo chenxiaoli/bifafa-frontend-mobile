@@ -29,7 +29,7 @@
      
       <van-field v-model="address" autosize type="textarea" rows="1" placeholder="输入或长按黏贴地址">
       
-      <div class="op" slot="button"><div class="address-scan"><van-icon name="scan" /></div> <div class="address-select" v-on:click="onAddressBook"><van-icon name="location-o" /></div></div>
+      <div class="op" slot="button"><div class="address-scan" v-on:click="onQrScan"><van-icon name="scan" /></div> <div class="address-select" v-on:click="onAddressBook"><van-icon name="location-o" /></div></div>
       </van-field>
 
     </van-cell-group>
@@ -75,6 +75,14 @@ export default {
         quantity:''
     };
   },
+created: function () {
+
+      const query=this.$route.query
+      if(query.address){
+          this.address=query.address
+      }
+
+},
   methods: {
     onGoBack() {
       this.$router.go(-1);
@@ -90,6 +98,9 @@ export default {
     },
     onWithdrawList(){
          this.$router.push({name:"withdraw-list"})
+    },
+    onQrScan(){
+         this.$router.push({name:"qr-scan"})
     }
   }
 };
