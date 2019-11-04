@@ -116,9 +116,7 @@ export default {
     border-left:1px; 
     border-left-color:#ebedf0;
     border-left-style: solid;
-        border-bottom:1px; 
-    border-bottom-color:#ebedf0;
-    border-bottom-style: solid;
+
 }
 
 .money-transfer .form .transfer .img{
