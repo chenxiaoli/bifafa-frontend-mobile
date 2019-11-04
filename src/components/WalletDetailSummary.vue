@@ -29,13 +29,15 @@
         <!-- <div>
           <van-icon name="cash-back-record"/>
         </div>-->
-        <div  v-on:click="goto('/wallet/coin/btc/withdraw')">提现</div>
+        <div v-on:click="goto('/wallet/coin/btc/withdraw')">提现</div>
       </div>
       <div>
         <!-- <div>
           <van-icon name="exchange"/>
         </div>-->
-        <div>资金划转</div>
+        <router-link :to="{ name: 'money-transfer', params: { id }}">
+          <div>资金划转</div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -43,7 +45,10 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      id:"btc"
+
+    };
   },
   props: ["symbol"],
   methods: {
@@ -92,6 +97,9 @@ Vue.use(Icon);
   background: #fff;
   padding: 10px 0 10px 0;
   height: 40px;
+  color: #1989fa;
+}
+.wallet-detail-summary a:link,a:visited {
   color: #1989fa;
 }
 .wallet-detail-summary .op div {

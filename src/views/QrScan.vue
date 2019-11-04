@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="qr-scan">
           <van-nav-bar
       title=""
       left-text
@@ -11,7 +11,7 @@
     <!-- 内容部分 -->
 <qrcode-stream  @decode="onDecode"  @init="onInit"></qrcode-stream>
     <video id="qr-vedio" class="v" autoplay=""></video>
-    <canvas id="qr-canvas" width="800" height="600" style="width: 800px; height: 600px;display:none;"></canvas>
+    <canvas id="qr-canvas" ></canvas>
     <p v-show="result != ''">{{result}}</p>
     <p v-show="errorMes != ''">{{errorMes}}</p>
   </div>
@@ -39,7 +39,6 @@ Vue.use(QrcodeStream);
   
     methods: {
       onGoBack() {
-          this.$router.replace({name:"withdraw",params:{id:"btc"},query:{address:"fffffffffffffffffffffff"}})
       this.$router.go(-1);
     },
        onDecode (decodedString) {
@@ -75,13 +74,25 @@ Vue.use(QrcodeStream);
 </script>
  
 <style >
+.qr-scan .van-nav-bar{
+    background: none;
+    background-color:rgba(0,0,0,0)
+}
+.qr-scan .van-hairline--bottom{
+        background-color:rgba(0,0,0,0);
+            background: none;
+}
+.qr-scan .van-hairline--bottom::after{
+    border-bottom: 0;
+}
+
   .v {
     width: 320px;
     height: 240px;
   }
  
   #qr-canvas {
-    width: 800px;
-    height: 800px;
+    width: 320px;
+    height: 240px;
   }
 </style>

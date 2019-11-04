@@ -28,7 +28,8 @@ const routes = [
   },
   {
     path: "/wallet/money-transfer",
-    component: MoneyTransfer
+    component: MoneyTransfer,
+    name:"money-transfer"
   },
   {
     path: "/wallet/coin/:id",

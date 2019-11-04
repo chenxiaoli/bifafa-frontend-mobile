@@ -16,9 +16,6 @@
       </van-row>
     </div>
 
-
-
-
         <van-cell-group class="balance">
       <div class="label">余额 (BTC)</div>
       <van-field   value="0.00000003334" disabled />
